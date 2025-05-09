@@ -1,10 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #8ac098;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    color:#478a59;
+    text-decoration: underline;
   }
   
   .quiz-container {
@@ -14,22 +16,24 @@ body {
     box-shadow: 0 0 10px #ccc;
     text-align: center;
   }
-  
+
+
   ul {
     list-style: none;
     padding: 0;
   }
   
   button {
-    margin: 10px 0;
+    margin: 15px 0;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
+   border-radius: 0.5%;
   }
   
  .up {
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #585858;
    background: #ffffff;
     padding: 40px;
