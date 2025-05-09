@@ -42,12 +42,12 @@ const jautaajumi = [
   {
     jautajums: "Kurš ir vispopulārākais sports pasaulē?",
     opcijas: {
-      A: "Futbols",
+      A: "Teniss",
       B: "Basketbols",
       C: "Vieglatlētika",
-      D: "Teniss"
+      D: "Futbols"
     },
-    correct: "A"
+    correct: "D"
   },
   {
     jautajums: "Kurai valstij ir vislielākais iedzīvotāju skaits pasaulē?",
@@ -57,7 +57,7 @@ const jautaajumi = [
       C: "Amerikas Savienotās Valstis",
       D: "Indonēzija"
     },
-    correct: "C"
+    correct: "A"
   },
   {
     jautajums: "Kura no vielām NAV sāls?",
@@ -68,7 +68,27 @@ const jautaajumi = [
       D: "H₂SO₄"
     },
     correct: "D"
-  }
+  },
+  {
+    jautajums: "Kura nav zivs?",
+    opcijas: {
+      A: "Tīģerhaizivs",
+      B: "Delfīns",
+      C: "Zutis",
+      D: "Raja"
+    },
+    correct: "B"
+  },
+  {
+    jautajums: "Kurai valstij ir vislielākais iedzīvotāju skaits pasaulē?",
+    opcijas: {
+      A: "Atlantijas okeāns",
+      B: "Klusais okeāns",
+      C: "Indijas okeāns",
+      D: "Ziemeļu ledus okeāns"
+    },
+    correct: "B"
+  },
 ];
 
 let pareizoSkaits = 0;
@@ -95,7 +115,7 @@ function ladetJaut() {
     optionsList.appendChild(li);
   }
 
-  document.getElementById('result').textContent = '';
+  document.getElementById('rezultats').textContent = '';
   document.getElementById('nakamais').style.display = 'none'; 
   atbildets = false;
 }
@@ -106,22 +126,22 @@ function checkAnswer(choice) {
   atbildets = true;
 
   const q = jautaajumi[jautajumaIndex];
-  const result = document.getElementById('result');
+  const rezultats = document.getElementById('rezultats');
 
   if (choice === q.correct) {
-    result.textContent = 'Pareizi!';
-    result.style.color = 'green';
+    rezultats.textContent = 'Pareizi!';
+    rezultats.style.color = 'green';
     pareizoSkaits++; // skaita pareizas atbildes
   } else {
-    result.textContent = `Nepareizi! Pareizā atbilde ir ${q.opcijas[q.correct]}.`;
-    result.style.color = 'red';
+    rezultats.textContent = `Nepareizi! Pareizā atbilde ir ${q.opcijas[q.correct]}.`;
+    rezultats.style.color = 'red';
   }
 
   document.getElementById('nakamais').style.display = 'inline-block'; 
 }
 
 // Ielādē nākamo jautājumu vai beidz testu
-function nextQuestion() {
+function nakamaisJaut() {
   jautajumaIndex++;
 
   if (jautajumaIndex < jautaajumi.length) {
